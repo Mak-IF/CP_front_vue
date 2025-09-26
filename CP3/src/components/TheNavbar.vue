@@ -6,7 +6,7 @@
             <router-link to="/">Заявки</router-link>
         </ul>
         <ul>
-            <router-link to="/">Мониторинг Контрагентов</router-link>
+            <router-link to="/counterpartyMonitoring">Мониторинг Контрагентов</router-link>
         </ul>
         <ul>
            <a href="#">Сообщения</a>

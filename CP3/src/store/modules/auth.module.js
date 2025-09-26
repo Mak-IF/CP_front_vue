@@ -22,14 +22,21 @@ export default {
     actions: {
         
 
-        async login({ commit }, payload) {   // выполнение запроса к серверу логина,  в пейлоад лежит вальюз из формы логина
+        async login({ commit, dispatch }, payload) {   // выполнение запроса к серверу логина,  в пейлоад лежит вальюз из формы логина
             try {
                 console.log(payload)
                 const url_login = "http://127.0.0.1:8000/api/auth/login/"
                 const {data} = await axios.post(url_login, payload)
                 console.log('Data', data)
+                commit('setToken', data.access)
+                commit('clearMessage', null, {root: true}) // очищает собщения ошибок если удачно перешел
             } catch (e) {
-                console.log(error(e.response.data.message)) //         console.dir(e.response.data.error.message) //
+                dispatch('setMessage', {
+                    value: error(e.response.data.message),
+                    type: 'danger'
+                }, {root: true})
+                console.log(error(e.response.data.message)) //      !TODO дописать потом обработку ошибок под то что возвращает апи   console.dir(e.response.data.error.message) //
+                throw new Error(e)
             }
             
             //console.log(payload, import.meta.env.VITE_VUE_APP_API_KEY)
