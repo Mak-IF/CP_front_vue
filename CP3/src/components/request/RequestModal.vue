@@ -16,28 +16,28 @@
 
         <div class="form-control" >
             <label for="category">Категория::</label>
-            <select id="category">
+            <select id="category" v-model="category">
 
             </select>
         </div>
 
         <div class="form-control" >
             <label for="subcategory">Подкатегория:</label>
-            <select id="subcategory">
+            <select id="subcategory" v-model="subcategory">
 
             </select>
         </div>
 
         <div class="form-control" >
             <label for="way">Способ подачи:</label>
-            <select  id="way">
+            <select  id="way" v-model="way">
 
             </select>
         </div>
 
         <div class="form-control" >
             <label for="urgency">Срочность:</label>
-            <select  id="urgency">
+            <select  id="urgency" v-model="urgency">
 
             </select>
         </div>
@@ -50,7 +50,7 @@
 
         <div class="form-control" :class="{invalid: phoneError}">
             <label for="phoneNumber">Внутренный номер:</label>
-            <input type="text"  id="phoneNumber" v-model="phoneNumber" @blur="phoneBlur">
+            <input type="text"  name="phoneNumber" id="phoneNumber" v-model="phoneNumber" @blur="phoneBlur">
             <small v-if="phoneError">{{ phoneError }}</small>
         </div>
 
@@ -66,11 +66,12 @@
 </template>
 
 <script>
-import { useRequestForm } from '../../use/request-form';
+import {useRequestForm} from '../../use/request-form'
 
 export default {
     setup() {
         return {
+            
             ...useRequestForm
         }
     }

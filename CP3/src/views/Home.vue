@@ -7,20 +7,21 @@
     <request-table :requests="[]"></request-table>
 
     <teleport to="body">
-      <app-modal v-if="modal" title="Создать заявку" @close="modal = false">
-        <request-modal />
+      <app-modal v-if="modal" title="Создать заявку" @close="modal = false">  <!-- тут используем модальное окно-->
+        <request-modal /> <!-- выводим модальное окно реквест модал-->
       </app-modal>
     </teleport>
   </app-page>
 </template>
 
 <script>
+  import {ref} from 'vue';
 //import RequestTableVue from '../components/request/RequestTable.vue';
   import AppPage from '../components/ui/AppPage.vue';
-  import  RequestTable  from '../components/request/RequestTable.vue';
+  import RequestTable  from '../components/request/RequestTable.vue';
   import AppModal from '../components/ui/AppModal.vue';
-  import RequestModal from '../components/request/RequestModal.vue'
-  import {ref} from 'vue'
+  import RequestModal from '../components/request/RequestModal.vue';
+  
 
 
   export default {
