@@ -2,7 +2,7 @@
     <div class="card">
         <h1 class="card-title">
             {{ title }}
-            <slot name="header" />
+            <slot name="header" /> <!-- тут вставляем что то - например кнопку создать заявку в заявках-->
         </h1>
         
         <slot />

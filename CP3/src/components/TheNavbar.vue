@@ -1,21 +1,23 @@
 <template>
-    <div class="navbar">
+    <nav class="navbar">
         <h3>CP</h3>
         
-        <ul>
-            <router-link to="/">Заявки</router-link>
-        </ul>
-        <ul>
-            <router-link to="/counterpartyMonitoring">Мониторинг Контрагентов</router-link>
-        </ul>
-        <ul>
-           <a href="#">Сообщения</a>
-        </ul>
-        <ul>
-            <a href="#" @click.prevent="logout">Выход</a>
+        <ul class="navbar-menu"> <!--потом передлать на выадающее меню-->
+            <li>
+                <router-link to="/">Заявки</router-link>
+            </li>
+            <li>
+                <router-link to="/counterpartyMonitoring">Мониторинг Контрагентов</router-link>
+            </li>
+            <li>
+                <a href="#">Сообщения</a>
+            </li>
+            <li>
+                <a href="#" @click.prevent="logout">Выход</a>
+            </li>
         </ul>
 
-    </div>
+    </nav>
 </template>
 
 <script>

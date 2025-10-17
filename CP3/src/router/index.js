@@ -22,6 +22,16 @@ const routes = [
         auth: true
     }
   },
+  
+  {
+    path: '/counterpartyMonitoring',
+    name: 'counterpartyMonitoring',
+    component: () => import('../views/counterpartyMonitoring.vue'),
+    meta: {
+        layout: 'main',
+        auth: true
+    }
+  },
   {
     path: '/auth',
     name: 'Auth',

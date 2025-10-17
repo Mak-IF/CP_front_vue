@@ -8,7 +8,7 @@
 
     <teleport to="body">
       <app-modal v-if="modal" title="Создать заявку" @close="modal = false">  <!-- тут используем модальное окно-->
-        <request-modal /> <!-- выводим модальное окно реквест модал-->
+        <request-modal @created="modal = false"/> <!-- выводим модальное окно реквест модал-->
       </app-modal>
     </teleport>
   </app-page>

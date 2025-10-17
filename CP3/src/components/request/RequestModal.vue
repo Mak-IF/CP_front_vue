@@ -1,4 +1,5 @@
 <template>
+    <!-- форма используемая в модальном окне создания заявок (в хоуме)-->
     <form @submit.prevent="onSubmit">
         <div class="form-control" :class="{invalid: userError}">
             <label for="currentUser">От сотрудника:</label>
@@ -69,11 +70,13 @@
 import {useRequestForm} from '../../use/request-form'
 
 export default {
-    setup() {
-        return {
-            
-            ...useRequestForm
+    emits: ['created'],
+    setup(_, {emit}) {
+        const submit = async values => {
+            console.log(values)
+            emit('created')
         }
+        return { ...useRequestForm(submit) }
     }
 }
 
