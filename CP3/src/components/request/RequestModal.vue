@@ -16,7 +16,7 @@
         </div>
 
         <div class="form-control" >
-            <label for="category">Категория::</label>
+            <label for="category">Категория:</label>
             <select id="category" v-model="category">
 
             </select>
@@ -68,12 +68,15 @@
 
 <script>
 import {useRequestForm} from '../../use/request-form'
+import {useStore} from 'vuex'  // /dist/vuex.cjs.js
 
 export default {
     emits: ['created'],
     setup(_, {emit}) {
+        const store = useStore()
+
         const submit = async values => {
-            console.log(values)
+            await store.dispatch('request/create', values)
             emit('created')
         }
         return { ...useRequestForm(submit) }

@@ -40,5 +40,19 @@ export default {
 </script>
 
 <style scoped>
-
+/* Навбар 
+.navbar {
+  height: 60px;
+  
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+  */
 </style>

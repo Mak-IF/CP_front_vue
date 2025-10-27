@@ -1,9 +1,10 @@
 import {createStore, createLogger } from 'vuex'
 import auth from './modules/auth.module'
+import request from './modules/request.module'
 
 const plugins = []  // пустой массив для плагинов - 
 
-if (process.env.NODE_ENV === 'development') { // если идет прооцесс разработки  то на авторизацию пох
+if (import.meta.env.NODE_ENV === 'development') { // если идет прооцесс разработки  то на авторизацию пох
   plugins.push(createLogger())
 }
 export default createStore({
@@ -33,6 +34,6 @@ export default createStore({
   },
 
   modules: {
-    auth
+    auth, request
   }
 })

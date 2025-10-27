@@ -24,10 +24,11 @@ export default {
 
         async login({ commit, dispatch }, payload) {   // выполнение запроса к серверу логина,  в пейлоад лежит вальюз из формы логина
             try {
-                console.log(payload)
+                console.log('payload', payload)
                 const url_login = "http://127.0.0.1:8000/api/auth/login/"
                 const {data} = await axios.post(url_login, payload)
                 console.log('Data', data)
+                //console.log('payload', payload)
                 commit('setToken', data.access)
                 commit('clearMessage', null, {root: true}) // очищает собщения ошибок если удачно перешел
             } catch (e) {

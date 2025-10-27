@@ -1,7 +1,8 @@
 {
   "dependencies": {
+    "jsonwebtoken": "^9.0.2",
     "vee-validate": "^4.5.8",
-    "yup": "^1.7.0",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "yup": "^1.7.0"
   }
 }
