@@ -610,3 +610,92 @@ h3 {
     background: #fff;
     transition: all 0.22s;
 }
+
+/* IF  попытка перейти на грид */
+.grid-container {
+                height:100vh;
+                display: grid;
+                grid-template-areas: 
+                                     "navbar"
+                                     "."
+                                     "sidebar"
+                                     "."
+                                     "content"
+                                     "."
+                                     "footer";
+                grid-template-columns: 1fr;
+                grid-template-rows: 80px 5px 1fr 5px 80px 5px 80px;
+}
+.grid-navbar { 
+    grid-area: navbar; 
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    
+    padding: 0 2rem;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /*sticky;fixed*/
+    z-index: 20;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    background-color: #fff;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eaecef;
+
+    height: 60px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+            
+.grid-sidebar { grid-area: sidebar; background-color: #ccc; }
+.grid-content { grid-area: content;  } /* background-color: #eee;*/
+.grid-footer { 
+    grid-area: footer; 
+    text-align:center; 
+    color: #42b983;
+} /* background-color: #bbb;*/
+h3{ 
+    text-align:center;
+}
+@media screen and (min-width: 468px) {
+                 
+    .grid-container {
+        height:100vh;
+        display: grid;
+        grid-template-areas: "navbar navbar navbar"
+                            ". . . "
+                            "sidebar . content"
+                            ". . ."
+                            "footer footer footer";
+        grid-template-columns: 130px 5px 1fr;
+        grid-template-rows: 70px 5px 1fr 5px 50px;
+    }
+}
+
+.navbar-userinfo{
+    display: inline-grid; 
+    grid-template-areas: "user"
+                         "menu-user";
+    grid-template-rows: 1fr 1fr;
+    
+    
+    font-size: 1em;
+}
+.navbar-userinfo p{
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.navbar-menu-userinfo{
+    grid-area: menu-user;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+}

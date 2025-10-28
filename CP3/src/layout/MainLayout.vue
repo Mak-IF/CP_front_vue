@@ -1,9 +1,12 @@
 <template>
-    <div class="app-container">
+    <div class="grid-container"> <!-- class="app-container" -->
         <the-navbar></the-navbar>
-        <div class="container with-nav">
+        <!-- <div > class="container with-nav" -->
             <app-message />
             <router-view/>
+        <!-- </div> -->
+        <div class="grid-footer">
+            <p>ПАО "АЭСК", 2025</p>
         </div>
     </div>
 

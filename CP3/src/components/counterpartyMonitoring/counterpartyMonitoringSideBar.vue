@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div class="grid-sidebar"> <!-- sidebar -->
     <nav class="menu">
       <button 
         v-for="item in menuItems" 

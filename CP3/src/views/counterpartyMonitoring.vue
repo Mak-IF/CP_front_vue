@@ -6,19 +6,17 @@
       @select="handleTabSelect"
     />
     <!-- Основной контент -->
-    <div class="content">
+    <div class="grid-content"> <!-- content -->
       <div v-if="activeTab === 'upload'">
-        <UploadFileExcell />
+        <counterpartyMonitoringUploadFileExcell />
       </div>
       
-      <div v-if="activeTab === 'view'" class="view-section">
-        <h2>Просмотр данных</h2>
-        <p>Здесь будет отображаться содержимое загруженного файла</p>
+      <div v-if="activeTab === 'view'" class="grid-content card"> <!--view-section -->
+        <counterpartyMonitoringTable />
       </div>
       
-      <div v-if="activeTab === 'export'" class="export-section">
-        <h2>Выгрузка данных</h2>
-        <button @click="exportData">Скачать данные</button>
+      <div v-if="activeTab === 'export'" class="grid-content card"> <!--export-section -->
+        <counterpartyMonitoringDownloadFileExcell />
       </div>
     </div>
     
@@ -29,7 +27,9 @@
 <script setup>
 import { ref } from 'vue'
 import Sidebar from '../components/counterpartyMonitoring/counterpartyMonitoringSideBar.vue'
-import UploadFileExcell from '../components/counterpartyMonitoring/UploadFileExcell.vue'
+import counterpartyMonitoringUploadFileExcell from '../components/counterpartyMonitoring/counterpartyMonitoringUploadFileExcell.vue'
+import counterpartyMonitoringTable from '../components/counterpartyMonitoring/counterpartyMonitoringTable.vue'
+import counterpartyMonitoringDownloadFileExcell from '../components/counterpartyMonitoring/counterpartyMonitoringDownloadFileExcell.vue'
 
 const activeTab = ref('upload')
 
